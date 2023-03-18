@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&family=Roboto+Mono&display=swap');
+*{
+    font-family: 'Roboto Mono', monospace;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+
+}
+/* font-family: 'Josefin Sans', sans-serif;
+font-family: 'Roboto Mono', monospace; */
+.nav-col p{
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+}
+
+/* home page  */
+.home-container{
+    
+    height: 86vh;
+    width: 100%;
+    position: relative;
+    background-image: url('../images/home-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;    
+    
+}
+.home-container::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.646);
+}
+.home-container .row{
+    position: relative;
+    height: 100%;
+}
+
+
+/* quiz page  */
+.quiz-container{
+    width: 100%;
+    position: relative;
+    background-image: url('../images/quiz-page.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100% 100%;    
+    
+}
+.quiz-container::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.646);
+}
+.quiz-container .row{
+    position: relative;
+}
+.quiz-container .row form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.quiz-container .quiz-div{
+    box-shadow: 0 8px 16px 0 rgba(23, 20, 20, 0.578);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 7px;
+}

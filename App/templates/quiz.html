@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}Quiz{% endblock title %}
+
+{% block name-blk %}
+    {% if name %}
+    <span class="text-dark me-2" style="font-weight: bold;">{{name}}</span>
+    
+    {% endif %}
+{% endblock %}
+
+{% block page-data %}
+    <div class="container-fluid quiz-container">
+        <div class="row ">
+            <form action="/check/" method="post">{% csrf_token %}
+            {% for j, i in questions %}
+                <div class="col-lg-6 col-md-7 col-sm-9 col-10 m-3 quiz-div">
+                    <p class="fs-4">{{j}}) {{i.question}}</p>
+                    <ol>
+                        <li><input type="radio" name="answer{{j}}" value="{{i.options.0}}" id=""> {{i.options.0}}</li>
+                        <li><input type="radio" name="answer{{j}}" value="{{i.options.1}}" id=""> {{i.options.1}}</li>
+                        <li><input type="radio" name="answer{{j}}" value="{{i.options.2}}" id=""> {{i.options.2}}</li>
+                        <li><input type="radio" name="answer{{j}}" value="{{i.options.3}}" id=""> {{i.options.3}}</li>
+                    </ol>
+
+                   
+                </div>
+            {% endfor %}
+                <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+
+        </div>
+    </div>
+
+    {% for message in messages %}
+    {% if message.tags ==  'success' %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" ></script>
+    <script>
+        var m = '{{message}}';
+        swal('', m, 'success');
+    </script>
+    {% endif %}
+    {% endfor %}
+{% endblock page-data %}
